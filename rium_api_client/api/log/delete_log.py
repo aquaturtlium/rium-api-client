@@ -6,7 +6,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.delete_log_response_200 import DeleteLogResponse200
+from ...models.delete_response import DeleteResponse
 from ...models.error_response import ErrorResponse
 from ...types import UNSET, Response
 
@@ -39,9 +39,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[Union[DeleteLogResponse200, ErrorResponse]]:
+) -> Optional[Union[DeleteResponse, ErrorResponse]]:
     if response.status_code == 200:
-        response_200 = DeleteLogResponse200.from_dict(response.json())
+        response_200 = DeleteResponse.from_dict(response.json())
 
         return response_200
 
@@ -63,7 +63,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[DeleteLogResponse200, ErrorResponse]]:
+) -> Response[Union[DeleteResponse, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,7 +78,7 @@ def sync_detailed(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-) -> Response[Union[DeleteLogResponse200, ErrorResponse]]:
+) -> Response[Union[DeleteResponse, ErrorResponse]]:
     """計測データの削除
 
      指定した計測データを削除する。
@@ -93,7 +93,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DeleteLogResponse200, ErrorResponse]]
+        Response[Union[DeleteResponse, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -115,7 +115,7 @@ def sync(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-) -> Optional[Union[DeleteLogResponse200, ErrorResponse]]:
+) -> Optional[Union[DeleteResponse, ErrorResponse]]:
     """計測データの削除
 
      指定した計測データを削除する。
@@ -130,7 +130,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DeleteLogResponse200, ErrorResponse]
+        Union[DeleteResponse, ErrorResponse]
     """
 
     return sync_detailed(
@@ -147,7 +147,7 @@ async def asyncio_detailed(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-) -> Response[Union[DeleteLogResponse200, ErrorResponse]]:
+) -> Response[Union[DeleteResponse, ErrorResponse]]:
     """計測データの削除
 
      指定した計測データを削除する。
@@ -162,7 +162,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DeleteLogResponse200, ErrorResponse]]
+        Response[Union[DeleteResponse, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -182,7 +182,7 @@ async def asyncio(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-) -> Optional[Union[DeleteLogResponse200, ErrorResponse]]:
+) -> Optional[Union[DeleteResponse, ErrorResponse]]:
     """計測データの削除
 
      指定した計測データを削除する。
@@ -197,7 +197,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DeleteLogResponse200, ErrorResponse]
+        Union[DeleteResponse, ErrorResponse]
     """
 
     return (

@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.delete_eventive_tag_response_200 import DeleteEventiveTagResponse200
+from ...models.delete_response import DeleteResponse
 from ...models.error_response import ErrorResponse
 from ...types import Response
 
@@ -23,9 +23,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[Union[DeleteEventiveTagResponse200, ErrorResponse]]:
+) -> Optional[Union[DeleteResponse, ErrorResponse]]:
     if response.status_code == 200:
-        response_200 = DeleteEventiveTagResponse200.from_dict(response.json())
+        response_200 = DeleteResponse.from_dict(response.json())
 
         return response_200
 
@@ -47,7 +47,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[DeleteEventiveTagResponse200, ErrorResponse]]:
+) -> Response[Union[DeleteResponse, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -60,7 +60,7 @@ def sync_detailed(
     eventive_tag_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[Union[DeleteEventiveTagResponse200, ErrorResponse]]:
+) -> Response[Union[DeleteResponse, ErrorResponse]]:
     """飼育記録タグの削除
 
      指定した飼育記録タグを削除する。
@@ -73,7 +73,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DeleteEventiveTagResponse200, ErrorResponse]]
+        Response[Union[DeleteResponse, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -91,7 +91,7 @@ def sync(
     eventive_tag_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[Union[DeleteEventiveTagResponse200, ErrorResponse]]:
+) -> Optional[Union[DeleteResponse, ErrorResponse]]:
     """飼育記録タグの削除
 
      指定した飼育記録タグを削除する。
@@ -104,7 +104,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DeleteEventiveTagResponse200, ErrorResponse]
+        Union[DeleteResponse, ErrorResponse]
     """
 
     return sync_detailed(
@@ -117,7 +117,7 @@ async def asyncio_detailed(
     eventive_tag_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[Union[DeleteEventiveTagResponse200, ErrorResponse]]:
+) -> Response[Union[DeleteResponse, ErrorResponse]]:
     """飼育記録タグの削除
 
      指定した飼育記録タグを削除する。
@@ -130,7 +130,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DeleteEventiveTagResponse200, ErrorResponse]]
+        Response[Union[DeleteResponse, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -146,7 +146,7 @@ async def asyncio(
     eventive_tag_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[Union[DeleteEventiveTagResponse200, ErrorResponse]]:
+) -> Optional[Union[DeleteResponse, ErrorResponse]]:
     """飼育記録タグの削除
 
      指定した飼育記録タグを削除する。
@@ -159,7 +159,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DeleteEventiveTagResponse200, ErrorResponse]
+        Union[DeleteResponse, ErrorResponse]
     """
 
     return (

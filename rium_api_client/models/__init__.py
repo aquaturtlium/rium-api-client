@@ -1,12 +1,6 @@
 """Contains all the data models used in inputs/outputs"""
 
-from .delete_event_response_200 import DeleteEventResponse200
-from .delete_eventive_tag_response_200 import DeleteEventiveTagResponse200
-from .delete_log_response_200 import DeleteLogResponse200
-from .delete_sensor_hub_response_200 import DeleteSensorHubResponse200
-from .delete_sensor_response_200 import DeleteSensorResponse200
-from .delete_sensor_source_response_200 import DeleteSensorSourceResponse200
-from .delete_user_upload_response_200 import DeleteUserUploadResponse200
+from .delete_response import DeleteResponse
 from .error import Error
 from .error_errors import ErrorErrors
 from .error_response import ErrorResponse
@@ -65,13 +59,7 @@ from .user_upload_post_request import UserUploadPostRequest
 from .user_upload_response import UserUploadResponse
 
 __all__ = (
-    "DeleteEventiveTagResponse200",
-    "DeleteEventResponse200",
-    "DeleteLogResponse200",
-    "DeleteSensorHubResponse200",
-    "DeleteSensorResponse200",
-    "DeleteSensorSourceResponse200",
-    "DeleteUserUploadResponse200",
+    "DeleteResponse",
     "Error",
     "ErrorErrors",
     "ErrorResponse",
