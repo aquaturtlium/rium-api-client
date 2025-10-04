@@ -29,7 +29,6 @@ from .log_bulk_request import LogBulkRequest
 from .log_bulk_response import LogBulkResponse
 from .log_post_request import LogPostRequest
 from .log_response import LogResponse
-from .log_value import LogValue
 from .loggable import Loggable
 from .pagination import Pagination
 from .related_ids import RelatedIds
@@ -89,7 +88,6 @@ __all__ = (
     "Loggable",
     "LogPostRequest",
     "LogResponse",
-    "LogValue",
     "Pagination",
     "RelatedIds",
     "Sensor",

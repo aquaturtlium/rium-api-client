@@ -127,7 +127,7 @@ def _build_response(
 
 def sync_detailed(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, datetime.date] = UNSET,
     end: Union[Unset, datetime.date] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
@@ -194,7 +194,7 @@ def sync_detailed(
 
 def sync(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, datetime.date] = UNSET,
     end: Union[Unset, datetime.date] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
@@ -256,7 +256,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, datetime.date] = UNSET,
     end: Union[Unset, datetime.date] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
@@ -321,7 +321,7 @@ async def asyncio_detailed(
 
 async def asyncio(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     start: Union[Unset, datetime.date] = UNSET,
     end: Union[Unset, datetime.date] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,

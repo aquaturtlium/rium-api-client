@@ -68,7 +68,7 @@ def _build_response(
 def sync_detailed(
     user_upload_id: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     includes: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
@@ -102,7 +102,7 @@ def sync_detailed(
 def sync(
     user_upload_id: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     includes: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
@@ -131,7 +131,7 @@ def sync(
 async def asyncio_detailed(
     user_upload_id: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     includes: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
@@ -163,7 +163,7 @@ async def asyncio_detailed(
 async def asyncio(
     user_upload_id: int,
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     includes: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示

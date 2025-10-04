@@ -1,15 +1,11 @@
 import datetime
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
-
-if TYPE_CHECKING:
-    from ..models.log_value import LogValue
-
 
 T = TypeVar("T", bound="LogBulkRequest")
 
@@ -20,20 +16,20 @@ class LogBulkRequest:
 
     Attributes:
         time (datetime.datetime): 計測時刻
-        value (LogValue):
+        value (float): 計測値
         sensor_source_id (int): センサソースID
         loggable_id (Union[Unset, int]): 記録対象ID
     """
 
     time: datetime.datetime
-    value: "LogValue"
+    value: float
     sensor_source_id: int
     loggable_id: Union[Unset, int] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
         time = self.time.isoformat()
 
-        value = self.value.to_dict()
+        value = self.value
 
         sensor_source_id = self.sensor_source_id
 
@@ -55,12 +51,10 @@ class LogBulkRequest:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.log_value import LogValue
-
         d = dict(src_dict)
         time = isoparse(d.pop("time"))
 
-        value = LogValue.from_dict(d.pop("value"))
+        value = d.pop("value")
 
         sensor_source_id = d.pop("sensor_source_id")
 

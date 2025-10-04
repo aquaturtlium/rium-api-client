@@ -1,15 +1,11 @@
 import datetime
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
-
-if TYPE_CHECKING:
-    from ..models.log_value import LogValue
-
 
 T = TypeVar("T", bound="Log")
 
@@ -20,13 +16,13 @@ class Log:
 
     Attributes:
         time (Union[Unset, datetime.datetime]): 計測時刻
-        value (Union[Unset, LogValue]):
+        value (Union[Unset, float]): 計測値
         sensor_source_id (Union[Unset, int]): センサソースID
         loggable_id (Union[Unset, int]): 記録対象ID
     """
 
     time: Union[Unset, datetime.datetime] = UNSET
-    value: Union[Unset, "LogValue"] = UNSET
+    value: Union[Unset, float] = UNSET
     sensor_source_id: Union[Unset, int] = UNSET
     loggable_id: Union[Unset, int] = UNSET
 
@@ -35,9 +31,7 @@ class Log:
         if not isinstance(self.time, Unset):
             time = self.time.isoformat()
 
-        value: Union[Unset, dict[str, Any]] = UNSET
-        if not isinstance(self.value, Unset):
-            value = self.value.to_dict()
+        value = self.value
 
         sensor_source_id = self.sensor_source_id
 
@@ -59,8 +53,6 @@ class Log:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.log_value import LogValue
-
         d = dict(src_dict)
         _time = d.pop("time", UNSET)
         time: Union[Unset, datetime.datetime]
@@ -69,12 +61,7 @@ class Log:
         else:
             time = isoparse(_time)
 
-        _value = d.pop("value", UNSET)
-        value: Union[Unset, LogValue]
-        if isinstance(_value, Unset):
-            value = UNSET
-        else:
-            value = LogValue.from_dict(_value)
+        value = d.pop("value", UNSET)
 
         sensor_source_id = d.pop("sensor_source_id", UNSET)
 
