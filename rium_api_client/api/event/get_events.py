@@ -23,7 +23,7 @@ def _get_kwargs(
     taxon_id: Union[Unset, int] = UNSET,
     genre_id: Union[Unset, int] = UNSET,
     tag_ids: Union[Unset, list[int]] = UNSET,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventsSort] = GetEventsSort.TIME,
@@ -59,7 +59,7 @@ def _get_kwargs(
 
     params["tag_ids"] = json_tag_ids
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params["limit"] = limit
 
@@ -135,7 +135,7 @@ def sync_detailed(
     taxon_id: Union[Unset, int] = UNSET,
     genre_id: Union[Unset, int] = UNSET,
     tag_ids: Union[Unset, list[int]] = UNSET,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventsSort] = GetEventsSort.TIME,
@@ -154,7 +154,7 @@ def sync_detailed(
         taxon_id (Union[Unset, int]):
         genre_id (Union[Unset, int]):
         tag_ids (Union[Unset, list[int]]):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventsSort]):  Default: GetEventsSort.TIME.
@@ -177,7 +177,7 @@ def sync_detailed(
         taxon_id=taxon_id,
         genre_id=genre_id,
         tag_ids=tag_ids,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -202,7 +202,7 @@ def sync(
     taxon_id: Union[Unset, int] = UNSET,
     genre_id: Union[Unset, int] = UNSET,
     tag_ids: Union[Unset, list[int]] = UNSET,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventsSort] = GetEventsSort.TIME,
@@ -221,7 +221,7 @@ def sync(
         taxon_id (Union[Unset, int]):
         genre_id (Union[Unset, int]):
         tag_ids (Union[Unset, list[int]]):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventsSort]):  Default: GetEventsSort.TIME.
@@ -245,7 +245,7 @@ def sync(
         taxon_id=taxon_id,
         genre_id=genre_id,
         tag_ids=tag_ids,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -264,7 +264,7 @@ async def asyncio_detailed(
     taxon_id: Union[Unset, int] = UNSET,
     genre_id: Union[Unset, int] = UNSET,
     tag_ids: Union[Unset, list[int]] = UNSET,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventsSort] = GetEventsSort.TIME,
@@ -283,7 +283,7 @@ async def asyncio_detailed(
         taxon_id (Union[Unset, int]):
         genre_id (Union[Unset, int]):
         tag_ids (Union[Unset, list[int]]):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventsSort]):  Default: GetEventsSort.TIME.
@@ -306,7 +306,7 @@ async def asyncio_detailed(
         taxon_id=taxon_id,
         genre_id=genre_id,
         tag_ids=tag_ids,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -329,7 +329,7 @@ async def asyncio(
     taxon_id: Union[Unset, int] = UNSET,
     genre_id: Union[Unset, int] = UNSET,
     tag_ids: Union[Unset, list[int]] = UNSET,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventsSort] = GetEventsSort.TIME,
@@ -348,7 +348,7 @@ async def asyncio(
         taxon_id (Union[Unset, int]):
         genre_id (Union[Unset, int]):
         tag_ids (Union[Unset, list[int]]):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventsSort]):  Default: GetEventsSort.TIME.
@@ -373,7 +373,7 @@ async def asyncio(
             taxon_id=taxon_id,
             genre_id=genre_id,
             tag_ids=tag_ids,
-            includes=includes,
+            fields=fields,
             limit=limit,
             page=page,
             sort=sort,

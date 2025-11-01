@@ -13,11 +13,11 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     user_upload_id: int,
     *,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -69,7 +69,7 @@ def sync_detailed(
     user_upload_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
 
@@ -77,7 +77,7 @@ def sync_detailed(
 
     Args:
         user_upload_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -89,7 +89,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         user_upload_id=user_upload_id,
-        includes=includes,
+        fields=fields,
     )
 
     response = client.get_httpx_client().request(
@@ -103,7 +103,7 @@ def sync(
     user_upload_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
 
@@ -111,7 +111,7 @@ def sync(
 
     Args:
         user_upload_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -124,7 +124,7 @@ def sync(
     return sync_detailed(
         user_upload_id=user_upload_id,
         client=client,
-        includes=includes,
+        fields=fields,
     ).parsed
 
 
@@ -132,7 +132,7 @@ async def asyncio_detailed(
     user_upload_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
 
@@ -140,7 +140,7 @@ async def asyncio_detailed(
 
     Args:
         user_upload_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -152,7 +152,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         user_upload_id=user_upload_id,
-        includes=includes,
+        fields=fields,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -164,7 +164,7 @@ async def asyncio(
     user_upload_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, UserUploadResponse]]:
     """アップロードファイルの詳細表示
 
@@ -172,7 +172,7 @@ async def asyncio(
 
     Args:
         user_upload_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -186,6 +186,6 @@ async def asyncio(
         await asyncio_detailed(
             user_upload_id=user_upload_id,
             client=client,
-            includes=includes,
+            fields=fields,
         )
     ).parsed

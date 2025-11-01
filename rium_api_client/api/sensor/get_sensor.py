@@ -13,11 +13,11 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     sensor_id: int,
     *,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -69,7 +69,7 @@ def sync_detailed(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, SensorResponse]]:
     """センサの詳細表示
 
@@ -77,7 +77,7 @@ def sync_detailed(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -89,7 +89,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         sensor_id=sensor_id,
-        includes=includes,
+        fields=fields,
     )
 
     response = client.get_httpx_client().request(
@@ -103,7 +103,7 @@ def sync(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, SensorResponse]]:
     """センサの詳細表示
 
@@ -111,7 +111,7 @@ def sync(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -124,7 +124,7 @@ def sync(
     return sync_detailed(
         sensor_id=sensor_id,
         client=client,
-        includes=includes,
+        fields=fields,
     ).parsed
 
 
@@ -132,7 +132,7 @@ async def asyncio_detailed(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, SensorResponse]]:
     """センサの詳細表示
 
@@ -140,7 +140,7 @@ async def asyncio_detailed(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -152,7 +152,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         sensor_id=sensor_id,
-        includes=includes,
+        fields=fields,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -164,7 +164,7 @@ async def asyncio(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, SensorResponse]]:
     """センサの詳細表示
 
@@ -172,7 +172,7 @@ async def asyncio(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -186,6 +186,6 @@ async def asyncio(
         await asyncio_detailed(
             sensor_id=sensor_id,
             client=client,
-            includes=includes,
+            fields=fields,
         )
     ).parsed

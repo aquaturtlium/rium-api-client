@@ -15,7 +15,7 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     sensor_id: int,
     *,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorSourcesOfSensorSort] = GetSensorSourcesOfSensorSort.NAME,
@@ -23,7 +23,7 @@ def _get_kwargs(
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params["limit"] = limit
 
@@ -91,7 +91,7 @@ def sync_detailed(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorSourcesOfSensorSort] = GetSensorSourcesOfSensorSort.NAME,
@@ -103,7 +103,7 @@ def sync_detailed(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorSourcesOfSensorSort]):  Default:
@@ -121,7 +121,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         sensor_id=sensor_id,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -139,7 +139,7 @@ def sync(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorSourcesOfSensorSort] = GetSensorSourcesOfSensorSort.NAME,
@@ -151,7 +151,7 @@ def sync(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorSourcesOfSensorSort]):  Default:
@@ -170,7 +170,7 @@ def sync(
     return sync_detailed(
         sensor_id=sensor_id,
         client=client,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -182,7 +182,7 @@ async def asyncio_detailed(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorSourcesOfSensorSort] = GetSensorSourcesOfSensorSort.NAME,
@@ -194,7 +194,7 @@ async def asyncio_detailed(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorSourcesOfSensorSort]):  Default:
@@ -212,7 +212,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         sensor_id=sensor_id,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -228,7 +228,7 @@ async def asyncio(
     sensor_id: int,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorSourcesOfSensorSort] = GetSensorSourcesOfSensorSort.NAME,
@@ -240,7 +240,7 @@ async def asyncio(
 
     Args:
         sensor_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorSourcesOfSensorSort]):  Default:
@@ -260,7 +260,7 @@ async def asyncio(
         await asyncio_detailed(
             sensor_id=sensor_id,
             client=client,
-            includes=includes,
+            fields=fields,
             limit=limit,
             page=page,
             sort=sort,

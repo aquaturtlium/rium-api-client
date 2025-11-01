@@ -1,5 +1,14 @@
-# rium-api-client
+# RIUM API Client
+![GitHub License](https://img.shields.io/github/license/aquaturtlium/rium-api-client)
+
 A client library for accessing RIUM API
+
+[RIUM](https://rium-data.com/) is an organisms and their keeping environments care data management and sharing service. Using RIUM API enables automation of care data management within RIUM and integration with external applications.
+
+This API client code is generated with [openapi-python-client](https://github.com/openapi-generators/openapi-python-client).
+
+## API Reference
+For API details, see [RIUM API Reference](https://rium-data.com/api/v1/docs).
 
 ## Usage
 First, create a client:

@@ -16,7 +16,7 @@ def _get_kwargs(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -27,7 +27,7 @@ def _get_kwargs(
 
     params["loggable_id"] = loggable_id
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -81,7 +81,7 @@ def sync_detailed(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, LogResponse]]:
     """計測データの詳細表示
 
@@ -91,7 +91,7 @@ def sync_detailed(
         time (datetime.datetime):
         sensor_source_id (int):
         loggable_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -105,7 +105,7 @@ def sync_detailed(
         time=time,
         sensor_source_id=sensor_source_id,
         loggable_id=loggable_id,
-        includes=includes,
+        fields=fields,
     )
 
     response = client.get_httpx_client().request(
@@ -121,7 +121,7 @@ def sync(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, LogResponse]]:
     """計測データの詳細表示
 
@@ -131,7 +131,7 @@ def sync(
         time (datetime.datetime):
         sensor_source_id (int):
         loggable_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -146,7 +146,7 @@ def sync(
         time=time,
         sensor_source_id=sensor_source_id,
         loggable_id=loggable_id,
-        includes=includes,
+        fields=fields,
     ).parsed
 
 
@@ -156,7 +156,7 @@ async def asyncio_detailed(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, LogResponse]]:
     """計測データの詳細表示
 
@@ -166,7 +166,7 @@ async def asyncio_detailed(
         time (datetime.datetime):
         sensor_source_id (int):
         loggable_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -180,7 +180,7 @@ async def asyncio_detailed(
         time=time,
         sensor_source_id=sensor_source_id,
         loggable_id=loggable_id,
-        includes=includes,
+        fields=fields,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -194,7 +194,7 @@ async def asyncio(
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, LogResponse]]:
     """計測データの詳細表示
 
@@ -204,7 +204,7 @@ async def asyncio(
         time (datetime.datetime):
         sensor_source_id (int):
         loggable_id (int):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -220,6 +220,6 @@ async def asyncio(
             time=time,
             sensor_source_id=sensor_source_id,
             loggable_id=loggable_id,
-            includes=includes,
+            fields=fields,
         )
     ).parsed

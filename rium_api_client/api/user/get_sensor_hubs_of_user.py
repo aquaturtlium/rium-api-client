@@ -16,7 +16,7 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     user_id: UUID,
     *,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorHubsOfUserSort] = GetSensorHubsOfUserSort.IS_AUTO,
@@ -25,7 +25,7 @@ def _get_kwargs(
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params["limit"] = limit
 
@@ -95,7 +95,7 @@ def sync_detailed(
     user_id: UUID,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorHubsOfUserSort] = GetSensorHubsOfUserSort.IS_AUTO,
@@ -108,7 +108,7 @@ def sync_detailed(
 
     Args:
         user_id (UUID):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorHubsOfUserSort]):  Default: GetSensorHubsOfUserSort.IS_AUTO.
@@ -126,7 +126,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         user_id=user_id,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -145,7 +145,7 @@ def sync(
     user_id: UUID,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorHubsOfUserSort] = GetSensorHubsOfUserSort.IS_AUTO,
@@ -158,7 +158,7 @@ def sync(
 
     Args:
         user_id (UUID):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorHubsOfUserSort]):  Default: GetSensorHubsOfUserSort.IS_AUTO.
@@ -177,7 +177,7 @@ def sync(
     return sync_detailed(
         user_id=user_id,
         client=client,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -190,7 +190,7 @@ async def asyncio_detailed(
     user_id: UUID,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorHubsOfUserSort] = GetSensorHubsOfUserSort.IS_AUTO,
@@ -203,7 +203,7 @@ async def asyncio_detailed(
 
     Args:
         user_id (UUID):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorHubsOfUserSort]):  Default: GetSensorHubsOfUserSort.IS_AUTO.
@@ -221,7 +221,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         user_id=user_id,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -238,7 +238,7 @@ async def asyncio(
     user_id: UUID,
     *,
     client: AuthenticatedClient,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetSensorHubsOfUserSort] = GetSensorHubsOfUserSort.IS_AUTO,
@@ -251,7 +251,7 @@ async def asyncio(
 
     Args:
         user_id (UUID):
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetSensorHubsOfUserSort]):  Default: GetSensorHubsOfUserSort.IS_AUTO.
@@ -271,7 +271,7 @@ async def asyncio(
         await asyncio_detailed(
             user_id=user_id,
             client=client,
-            includes=includes,
+            fields=fields,
             limit=limit,
             page=page,
             sort=sort,

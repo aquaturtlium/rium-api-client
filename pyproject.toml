@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "rium-api-client"
-version = "0.1.0"
+version = "0.2.0"
 description = "A client library for accessing RIUM API"
-authors = []
+license = "MIT"
+authors = [
+  "K8ki <support@rium-data.com>"
+  ]
 readme = "README.md"
 packages = [
     { include = "rium_api_client" },

@@ -14,7 +14,7 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventiveTagsSort] = GetEventiveTagsSort.NAME,
@@ -23,7 +23,7 @@ def _get_kwargs(
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    params["includes"] = includes
+    params["fields"] = fields
 
     params["limit"] = limit
 
@@ -92,7 +92,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventiveTagsSort] = GetEventiveTagsSort.NAME,
@@ -104,7 +104,7 @@ def sync_detailed(
      指定した条件に合致する飼育記録タグの一覧を取得する。
 
     Args:
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventiveTagsSort]):  Default: GetEventiveTagsSort.NAME.
@@ -121,7 +121,7 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -139,7 +139,7 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventiveTagsSort] = GetEventiveTagsSort.NAME,
@@ -151,7 +151,7 @@ def sync(
      指定した条件に合致する飼育記録タグの一覧を取得する。
 
     Args:
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventiveTagsSort]):  Default: GetEventiveTagsSort.NAME.
@@ -169,7 +169,7 @@ def sync(
 
     return sync_detailed(
         client=client,
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -181,7 +181,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventiveTagsSort] = GetEventiveTagsSort.NAME,
@@ -193,7 +193,7 @@ async def asyncio_detailed(
      指定した条件に合致する飼育記録タグの一覧を取得する。
 
     Args:
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventiveTagsSort]):  Default: GetEventiveTagsSort.NAME.
@@ -210,7 +210,7 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        includes=includes,
+        fields=fields,
         limit=limit,
         page=page,
         sort=sort,
@@ -226,7 +226,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    includes: Union[Unset, str] = UNSET,
+    fields: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = UNSET,
     page: Union[Unset, int] = 1,
     sort: Union[Unset, GetEventiveTagsSort] = GetEventiveTagsSort.NAME,
@@ -238,7 +238,7 @@ async def asyncio(
      指定した条件に合致する飼育記録タグの一覧を取得する。
 
     Args:
-        includes (Union[Unset, str]):
+        fields (Union[Unset, str]):
         limit (Union[Unset, int]):
         page (Union[Unset, int]):  Default: 1.
         sort (Union[Unset, GetEventiveTagsSort]):  Default: GetEventiveTagsSort.NAME.
@@ -257,7 +257,7 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            includes=includes,
+            fields=fields,
             limit=limit,
             page=page,
             sort=sort,
