@@ -15,7 +15,7 @@ class LogBulkRequest:
     """一括登録時計測データリクエストスキーマ
 
     Attributes:
-        time (datetime.datetime): 計測時刻
+        time (datetime.datetime): 計測時刻（タイムゾーンは常にJST扱い）
         value (float): 計測値
         sensor_source_id (int): センサソースID
         loggable_id (Union[Unset, int]): 記録対象ID

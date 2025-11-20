@@ -19,6 +19,8 @@ class SensorSourcePatchRequest:
 
     Attributes:
         name (Union[Unset, str]): センサソース名称
+
+            `名称[単位]` 形式で指定することで、センサソース名称と計測単位を指定できる。例えば `水温[℃]` のように指定する。
         sensor_id (Union[Unset, int]): センサID
         graph_type_id (Union[Unset, GraphTypeId]): グラフ種別ID
 

@@ -36,7 +36,7 @@ class SensorPostRequest:
 
             RIUM APIからは `2` `3` `4` のみ指定可能である。手動でデータ計測を行うセンサの場合は `2` を、ソフトウェアを介して自動でデータ計測を行うセンサの場合は `3` を選択する。`4`
             は将来実装される機能向けに予約されたIDであり使用しない。なお、現時点では選択したIDによる差は表示名のみで機能的な差異はない。
-        active (Union[Unset, bool]): アクティブフラグ
+        is_active (Union[Unset, bool]): アクティブフラグ
 
             `true` のときに、関連付けられたセンサソースに対して計測データの登録が可能となる。
         device_id (Union[None, Unset, str]): デバイスID
@@ -48,7 +48,7 @@ class SensorPostRequest:
     name: str
     sensor_hub_id: int
     sensor_type_id: SensorPostRequestSensorTypeId
-    active: Union[Unset, bool] = UNSET
+    is_active: Union[Unset, bool] = UNSET
     device_id: Union[None, Unset, str] = UNSET
     sensor_sources: Union["RelatedIds", Unset, list["SensorSourcePostRequest"]] = UNSET
 
@@ -61,7 +61,7 @@ class SensorPostRequest:
 
         sensor_type_id = self.sensor_type_id.value
 
-        active = self.active
+        is_active = self.is_active
 
         device_id: Union[None, Unset, str]
         if isinstance(self.device_id, Unset):
@@ -91,8 +91,8 @@ class SensorPostRequest:
                 "sensor_type_id": sensor_type_id,
             }
         )
-        if active is not UNSET:
-            field_dict["active"] = active
+        if is_active is not UNSET:
+            field_dict["is_active"] = is_active
         if device_id is not UNSET:
             field_dict["device_id"] = device_id
         if sensor_sources is not UNSET:
@@ -112,7 +112,7 @@ class SensorPostRequest:
 
         sensor_type_id = SensorPostRequestSensorTypeId(d.pop("sensor_type_id"))
 
-        active = d.pop("active", UNSET)
+        is_active = d.pop("is_active", UNSET)
 
         def _parse_device_id(data: object) -> Union[None, Unset, str]:
             if data is None:
@@ -157,7 +157,7 @@ class SensorPostRequest:
             name=name,
             sensor_hub_id=sensor_hub_id,
             sensor_type_id=sensor_type_id,
-            active=active,
+            is_active=is_active,
             device_id=device_id,
             sensor_sources=sensor_sources,
         )

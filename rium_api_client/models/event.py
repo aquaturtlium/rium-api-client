@@ -20,7 +20,7 @@ class Event:
 
     Attributes:
         id (Union[Unset, int]): 飼育記録ID
-        time (Union[Unset, datetime.datetime]): 計測時刻
+        time (Union[Unset, datetime.datetime]): 計測時刻（タイムゾーンは常にJST扱い）
         description (Union[Unset, str]): 記録内容
         loggable_id (Union[Unset, int]): 記録対象ID
         attachable_id (Union[Unset, int]): 添付対象ID

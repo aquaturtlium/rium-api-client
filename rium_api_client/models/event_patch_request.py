@@ -20,7 +20,7 @@ class EventPatchRequest:
     """飼育記録 PATCHリクエストスキーマ
 
     Attributes:
-        time (Union[Unset, datetime.datetime]): 計測時刻
+        time (Union[Unset, datetime.datetime]): 計測時刻（タイムゾーンは常にJST扱い）
         description (Union[Unset, str]): 記録内容
         loggable_id (Union[Unset, int]): 記録対象ID
         eventive_tags (Union['RelatedIds', Unset, list['EventiveTagPostRequest']]): 関連飼育記録タグ指定情報

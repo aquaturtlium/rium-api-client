@@ -20,7 +20,7 @@ class EventPostRequest:
     """飼育記録 POSTリクエストスキーマ
 
     Attributes:
-        time (datetime.datetime): 計測時刻
+        time (datetime.datetime): 計測時刻（タイムゾーンは常にJST扱い）
         loggable_id (int): 記録対象ID
         description (Union[Unset, str]): 記録内容
         eventive_tags (Union['RelatedIds', Unset, list['EventiveTagPostRequest']]): 関連飼育記録タグ指定情報

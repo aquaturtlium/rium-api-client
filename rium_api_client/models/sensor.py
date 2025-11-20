@@ -33,7 +33,7 @@ class Sensor:
             - 102: SwitchBot ハブ2
             - 103: SwitchBot プラグミニ（JP）
             - 104: SwitchBot プラグミニ（US）
-        active (Union[Unset, bool]): アクティブフラグ
+        is_active (Union[Unset, bool]): アクティブフラグ
 
             `true` のときに、関連付けられたセンサソースに対して計測データの登録が可能となる。
         device_id (Union[None, Unset, str]): デバイスID
@@ -46,7 +46,7 @@ class Sensor:
     name: Union[Unset, str] = UNSET
     sensor_hub_id: Union[Unset, int] = UNSET
     sensor_type_id: Union[Unset, SensorSensorTypeId] = UNSET
-    active: Union[Unset, bool] = UNSET
+    is_active: Union[Unset, bool] = UNSET
     device_id: Union[None, Unset, str] = UNSET
     sensor_sources: Union[Unset, list["SensorSource"]] = UNSET
 
@@ -61,7 +61,7 @@ class Sensor:
         if not isinstance(self.sensor_type_id, Unset):
             sensor_type_id = self.sensor_type_id.value
 
-        active = self.active
+        is_active = self.is_active
 
         device_id: Union[None, Unset, str]
         if isinstance(self.device_id, Unset):
@@ -87,8 +87,8 @@ class Sensor:
             field_dict["sensor_hub_id"] = sensor_hub_id
         if sensor_type_id is not UNSET:
             field_dict["sensor_type_id"] = sensor_type_id
-        if active is not UNSET:
-            field_dict["active"] = active
+        if is_active is not UNSET:
+            field_dict["is_active"] = is_active
         if device_id is not UNSET:
             field_dict["device_id"] = device_id
         if sensor_sources is not UNSET:
@@ -114,7 +114,7 @@ class Sensor:
         else:
             sensor_type_id = SensorSensorTypeId(_sensor_type_id)
 
-        active = d.pop("active", UNSET)
+        is_active = d.pop("is_active", UNSET)
 
         def _parse_device_id(data: object) -> Union[None, Unset, str]:
             if data is None:
@@ -137,7 +137,7 @@ class Sensor:
             name=name,
             sensor_hub_id=sensor_hub_id,
             sensor_type_id=sensor_type_id,
-            active=active,
+            is_active=is_active,
             device_id=device_id,
             sensor_sources=sensor_sources,
         )

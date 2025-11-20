@@ -19,8 +19,8 @@ class Loggable:
         id (Union[Unset, int]): 記録対象ID
         name (Union[Unset, str]): 記録対象名称
         description (Union[Unset, str]): 記録対象詳細
-        created (Union[Unset, datetime.datetime]): 作成日時
-        modified (Union[Unset, datetime.datetime]): 更新日時
+        created (Union[Unset, datetime.datetime]): 作成日時（タイムゾーンは常にJST扱い）
+        modified (Union[Unset, datetime.datetime]): 更新日時（タイムゾーンは常にJST扱い）
         user_id (Union[Unset, UUID]): ユーザID
         attachable_id (Union[Unset, int]): 添付対象ID
         images (Union[Unset, list[str]]): アップロードファイルURL配列

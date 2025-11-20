@@ -20,7 +20,7 @@ class SensorPatchRequest:
     Attributes:
         name (Union[Unset, str]): センサ名称
         sensor_hub_id (Union[Unset, int]): センサハブID
-        active (Union[Unset, bool]): アクティブフラグ
+        is_active (Union[Unset, bool]): アクティブフラグ
 
             `true` のときに、関連付けられたセンサソースに対して計測データの登録が可能となる。
         device_id (Union[None, Unset, str]): デバイスID
@@ -31,7 +31,7 @@ class SensorPatchRequest:
 
     name: Union[Unset, str] = UNSET
     sensor_hub_id: Union[Unset, int] = UNSET
-    active: Union[Unset, bool] = UNSET
+    is_active: Union[Unset, bool] = UNSET
     device_id: Union[None, Unset, str] = UNSET
     sensor_sources: Union["RelatedIds", Unset, list["SensorSourcePostRequest"]] = UNSET
 
@@ -42,7 +42,7 @@ class SensorPatchRequest:
 
         sensor_hub_id = self.sensor_hub_id
 
-        active = self.active
+        is_active = self.is_active
 
         device_id: Union[None, Unset, str]
         if isinstance(self.device_id, Unset):
@@ -70,8 +70,8 @@ class SensorPatchRequest:
             field_dict["name"] = name
         if sensor_hub_id is not UNSET:
             field_dict["sensor_hub_id"] = sensor_hub_id
-        if active is not UNSET:
-            field_dict["active"] = active
+        if is_active is not UNSET:
+            field_dict["is_active"] = is_active
         if device_id is not UNSET:
             field_dict["device_id"] = device_id
         if sensor_sources is not UNSET:
@@ -89,7 +89,7 @@ class SensorPatchRequest:
 
         sensor_hub_id = d.pop("sensor_hub_id", UNSET)
 
-        active = d.pop("active", UNSET)
+        is_active = d.pop("is_active", UNSET)
 
         def _parse_device_id(data: object) -> Union[None, Unset, str]:
             if data is None:
@@ -133,7 +133,7 @@ class SensorPatchRequest:
         sensor_patch_request = cls(
             name=name,
             sensor_hub_id=sensor_hub_id,
-            active=active,
+            is_active=is_active,
             device_id=device_id,
             sensor_sources=sensor_sources,
         )

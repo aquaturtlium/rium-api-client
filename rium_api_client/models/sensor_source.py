@@ -21,6 +21,8 @@ class SensorSource:
     Attributes:
         id (Union[Unset, int]): センサソースID
         name (Union[Unset, str]): センサソース名称
+
+            `名称[単位]` 形式で指定することで、センサソース名称と計測単位を指定できる。例えば `水温[℃]` のように指定する。
         sensor_id (Union[Unset, int]): センサID
         sensor_source_type_id (Union[Unset, SensorSourceTypeId]): センサソースタイプID
 
@@ -40,6 +42,10 @@ class SensorSource:
         entity_id (Union[None, Unset, str]): エンティティID
 
             外部サービスとの連携時等にセンサソースを一意に特定するためのIDが必要となる場合に使用する。
+        name_wo_unit (Union[Unset, str]): センサソース名称（単位なし）
+
+            センサソース名称から計測単位を除いた文字列
+        unit (Union[Unset, str]): センサソース計測単位
         loggables (Union[Unset, list['Loggable']]): 記録対象配列
     """
 
@@ -49,6 +55,8 @@ class SensorSource:
     sensor_source_type_id: Union[Unset, SensorSourceTypeId] = UNSET
     graph_type_id: Union[Unset, GraphTypeId] = UNSET
     entity_id: Union[None, Unset, str] = UNSET
+    name_wo_unit: Union[Unset, str] = UNSET
+    unit: Union[Unset, str] = UNSET
     loggables: Union[Unset, list["Loggable"]] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
@@ -72,6 +80,10 @@ class SensorSource:
         else:
             entity_id = self.entity_id
 
+        name_wo_unit = self.name_wo_unit
+
+        unit = self.unit
+
         loggables: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.loggables, Unset):
             loggables = []
@@ -94,6 +106,10 @@ class SensorSource:
             field_dict["graph_type_id"] = graph_type_id
         if entity_id is not UNSET:
             field_dict["entity_id"] = entity_id
+        if name_wo_unit is not UNSET:
+            field_dict["name_wo_unit"] = name_wo_unit
+        if unit is not UNSET:
+            field_dict["unit"] = unit
         if loggables is not UNSET:
             field_dict["loggables"] = loggables
 
@@ -133,6 +149,10 @@ class SensorSource:
 
         entity_id = _parse_entity_id(d.pop("entity_id", UNSET))
 
+        name_wo_unit = d.pop("name_wo_unit", UNSET)
+
+        unit = d.pop("unit", UNSET)
+
         loggables = []
         _loggables = d.pop("loggables", UNSET)
         for loggables_item_data in _loggables or []:
@@ -147,6 +167,8 @@ class SensorSource:
             sensor_source_type_id=sensor_source_type_id,
             graph_type_id=graph_type_id,
             entity_id=entity_id,
+            name_wo_unit=name_wo_unit,
+            unit=unit,
             loggables=loggables,
         )
 

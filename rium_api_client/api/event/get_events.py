@@ -16,8 +16,8 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    start: Union[Unset, datetime.date] = UNSET,
-    end: Union[Unset, datetime.date] = UNSET,
+    start: Union[Unset, datetime.datetime] = UNSET,
+    end: Union[Unset, datetime.datetime] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
     user_id: Union[Unset, UUID] = UNSET,
     taxon_id: Union[Unset, int] = UNSET,
@@ -128,8 +128,8 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    start: Union[Unset, datetime.date] = UNSET,
-    end: Union[Unset, datetime.date] = UNSET,
+    start: Union[Unset, datetime.datetime] = UNSET,
+    end: Union[Unset, datetime.datetime] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
     user_id: Union[Unset, UUID] = UNSET,
     taxon_id: Union[Unset, int] = UNSET,
@@ -147,8 +147,8 @@ def sync_detailed(
      指定した条件に合致する飼育記録の一覧を取得する。
 
     Args:
-        start (Union[Unset, datetime.date]):
-        end (Union[Unset, datetime.date]):
+        start (Union[Unset, datetime.datetime]):
+        end (Union[Unset, datetime.datetime]):
         loggable_id (Union[Unset, int]):
         user_id (Union[Unset, UUID]):
         taxon_id (Union[Unset, int]):
@@ -195,8 +195,8 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    start: Union[Unset, datetime.date] = UNSET,
-    end: Union[Unset, datetime.date] = UNSET,
+    start: Union[Unset, datetime.datetime] = UNSET,
+    end: Union[Unset, datetime.datetime] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
     user_id: Union[Unset, UUID] = UNSET,
     taxon_id: Union[Unset, int] = UNSET,
@@ -214,8 +214,8 @@ def sync(
      指定した条件に合致する飼育記録の一覧を取得する。
 
     Args:
-        start (Union[Unset, datetime.date]):
-        end (Union[Unset, datetime.date]):
+        start (Union[Unset, datetime.datetime]):
+        end (Union[Unset, datetime.datetime]):
         loggable_id (Union[Unset, int]):
         user_id (Union[Unset, UUID]):
         taxon_id (Union[Unset, int]):
@@ -257,8 +257,8 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    start: Union[Unset, datetime.date] = UNSET,
-    end: Union[Unset, datetime.date] = UNSET,
+    start: Union[Unset, datetime.datetime] = UNSET,
+    end: Union[Unset, datetime.datetime] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
     user_id: Union[Unset, UUID] = UNSET,
     taxon_id: Union[Unset, int] = UNSET,
@@ -276,8 +276,8 @@ async def asyncio_detailed(
      指定した条件に合致する飼育記録の一覧を取得する。
 
     Args:
-        start (Union[Unset, datetime.date]):
-        end (Union[Unset, datetime.date]):
+        start (Union[Unset, datetime.datetime]):
+        end (Union[Unset, datetime.datetime]):
         loggable_id (Union[Unset, int]):
         user_id (Union[Unset, UUID]):
         taxon_id (Union[Unset, int]):
@@ -322,8 +322,8 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    start: Union[Unset, datetime.date] = UNSET,
-    end: Union[Unset, datetime.date] = UNSET,
+    start: Union[Unset, datetime.datetime] = UNSET,
+    end: Union[Unset, datetime.datetime] = UNSET,
     loggable_id: Union[Unset, int] = UNSET,
     user_id: Union[Unset, UUID] = UNSET,
     taxon_id: Union[Unset, int] = UNSET,
@@ -341,8 +341,8 @@ async def asyncio(
      指定した条件に合致する飼育記録の一覧を取得する。
 
     Args:
-        start (Union[Unset, datetime.date]):
-        end (Union[Unset, datetime.date]):
+        start (Union[Unset, datetime.datetime]):
+        end (Union[Unset, datetime.datetime]):
         loggable_id (Union[Unset, int]):
         user_id (Union[Unset, UUID]):
         taxon_id (Union[Unset, int]):

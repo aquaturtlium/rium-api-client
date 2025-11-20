@@ -15,7 +15,7 @@ class Log:
     """**計測データ** 飼育生体・飼育環境に対する数値データ
 
     Attributes:
-        time (Union[Unset, datetime.datetime]): 計測時刻
+        time (Union[Unset, datetime.datetime]): 計測時刻（タイムゾーンは常にJST扱い）
         value (Union[Unset, float]): 計測値
         sensor_source_id (Union[Unset, int]): センサソースID
         loggable_id (Union[Unset, int]): 記録対象ID

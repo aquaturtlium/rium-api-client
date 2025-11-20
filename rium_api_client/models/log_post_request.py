@@ -13,7 +13,7 @@ class LogPostRequest:
     """計測データ POSTリクエストスキーマ
 
     Attributes:
-        time (datetime.datetime): 計測時刻
+        time (datetime.datetime): 計測時刻（タイムゾーンは常にJST扱い）
         value (float): 計測値
         sensor_source_id (int): センサソースID
         loggable_id (int): 記録対象ID

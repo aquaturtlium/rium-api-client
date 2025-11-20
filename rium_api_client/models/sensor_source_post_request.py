@@ -20,6 +20,8 @@ class SensorSourcePostRequest:
 
     Attributes:
         name (str): センサソース名称
+
+            `名称[単位]` 形式で指定することで、センサソース名称と計測単位を指定できる。例えば `水温[℃]` のように指定する。
         sensor_id (int): センサID
         sensor_source_type_id (SensorSourceTypeId): センサソースタイプID
 
