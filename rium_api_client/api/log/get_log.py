@@ -77,7 +77,7 @@ def _build_response(
 
 def sync_detailed(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
@@ -117,7 +117,7 @@ def sync_detailed(
 
 def sync(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
@@ -152,7 +152,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
@@ -190,7 +190,7 @@ async def asyncio_detailed(
 
 async def asyncio(
     *,
-    client: AuthenticatedClient,
+    client: Union[AuthenticatedClient, Client],
     time: datetime.datetime,
     sensor_source_id: int,
     loggable_id: int,
