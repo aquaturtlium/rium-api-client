@@ -1,4 +1,5 @@
 # RIUM API Client
+![GitHub License](https://img.shields.io/github/license/aquaturtlium/rium-api-client)
 
 A generated, typed Python client for the RIUM HTTP API. It supports synchronous and asynchronous requests and is distributed under the MIT License.
 
